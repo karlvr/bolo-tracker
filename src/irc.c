@@ -142,7 +142,7 @@ void ircDestroy() {
 *CREATION DATE: 00/10/02
 *LAST MODIFIED: 00/10/02
 *PURPOSE:
-* Returns the highest socket in se by the debug subsystem
+* Returns the highest socket in use by the debug subsystem
 *
 *ARGUMENTS:
 *
@@ -158,7 +158,7 @@ int ircGetHighestSocket() {
   q = ircc;
   while (NonEmpty(q)) {
     if ((int) q->sock > returnValue) {
-      returnValue = (int) q;
+      returnValue = (int) q->sock;
     }
     mainAddSocket(q->sock);
     q = IrcTail(q);
